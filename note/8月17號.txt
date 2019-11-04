@@ -1,0 +1,12 @@
+GUI
+全局變量:結構體GUIState，其中有mouse、鍵盤等狀態。但是加入了一些東西之後，發現塞太滿了。
+所以要包裝起來，比如以後要訪問mouseRclick，就要用GUIState.mouse.mouseRclick，
+訪問wasd，就要用GUIState.key.w。若是shift之類的，可以另外加一個other，或是直接放在最外面(不建議)。
+
+為了使用方便，按鍵可能要有三種狀態，未按下、被按住、按過一次。這樣就不能用bool來儲存每個key的state
+要用int。可能0為未按下、1為被按住、-1為被按過一次。
+在GUI接受input的operate檢查事件函數時，在每次進入函數時，要初始化按紐state和其他需要的state(如wheel)
+也就是設為零，然後透過keydown設為pressing(1)，keyup設為pressed(-1)
+滑鼠的移動距離還有之類的也可以用這個方法(初始化->檢查狀態->更新狀態)
+
+必須要有個全局時間變量，從開始遊戲時就獲得一個值，然後隨需要訪問。

@@ -1,0 +1,1 @@
+開路電壓增益(open-circuit voltage gain)是在零負載情況下的增益。

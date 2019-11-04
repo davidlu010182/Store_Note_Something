@@ -1,0 +1,6 @@
+每個頭文件都應該要用(這是foo/src/bar/baz.h)
+    #ifndef FOO_BAR_BAZ_H_
+    #define FOO_BAR_BAZ_H_
+    …
+    #endif // FOO_BAR_BAZ_H_
+來防止互相包含。 格式是 <ProjectName>_<FilePath>_<FileName>_H_

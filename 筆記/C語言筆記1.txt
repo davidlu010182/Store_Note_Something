@@ -1,0 +1,37 @@
+fopen之後要記得fclose，不然會造成內存洩漏。
+記憶體:
+	heap
+	stack
+	global(static)
+	text(code)
+
+malloc, calloc, realloc, free 都是在heap裡面分配一塊記憶體。
+calloc(n, size)，calloc會將分配的記憶體全部塞0。
+realloc(p, size)會重新分配一塊記憶體，並將p指向的東西全塞到新的記憶體裡。
+realloc(p, 0)，相當於p = NULL
+P = realloc(NULL, size)，等於擴充在原有的，P指向的記憶體後面
+free完p之後，最好將p = NULL;
+
+
+int Add(int a, int b){}
+int (*p)(int, int); //如此，p就是指向，有兩個int做參數並返回int的函式，的指標。
+p = &Add; p = Add; //兩者是等價的，皆可用。函式名稱會返回函式位址。
+int (*p)(int, int) = Add; //宣告的同時初始化，Add可換成&Add。
+int c = (*p)(2, 3);  //這是使用方法。
+int c = p(2, 3)      //另一種更好的使用方法。兩種皆可用。
+
+函式指標可用作另一個函式的參數。用法如同宣告。
+void A(){}
+void B( void (*p)() ){}
+void (*pf)() = A; B(pf);
+//或者不透過p，直接把A丟進去，如	B(A); 
+
+----
+
+在定義函式時，array參數可以有另一種寫法。
+void foo(int a[10]); //一個長度為10的int aray
+void foo(int a[static 10]); //一個長度"至少"為10的int array參數
+在中括號之間加入static，可以指定傳入的數組長度至少多少。
+若是傳入 a[9] 或 NULL 則編譯器會發出警告。
+
+/*注意，該特性僅在C語言有用，C++無法使用。*/

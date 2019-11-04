@@ -1,0 +1,14 @@
+{
+    "Font": {
+        "BasicFont": {
+            "cht": {
+                "name": "Source HanSans Medium",
+                "file": "SourceHanSans-Medium.ttf"
+            }
+        }
+    },
+    "Path": {
+        "TileTexture": "./textures/bigmap/",
+        "TiledMapTSX": "../../../../../textures/bigmap/"
+    }
+}

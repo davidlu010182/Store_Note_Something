@@ -1,0 +1,16 @@
+找圖片當tile
+弄個資料夾存圖片，掌握一圖多tile的技巧
+嘗試做mainInterface的drawTerrain
+嘗試把loadWorld從gGamCore類裡獨立出來
+搞定loadWorld的的載入(WorldMap, WorldInfor, WorldShader, 三個gList, now_State)
+GUI的響應不該直接指向函數，而是應該用某種東西代替。(有個manager代管)
+debug測試：
+
+.t(非txt檔)似乎無法使用>>讀取資料
+
+(暫時解決) 改換檔案路徑後，雖正確卻讀取不到(似乎是debug資料夾(工作環境路徑)問題，以後都須將TT.exe
+放到Test Enviroment裡執行)
+
+ps.
+
+WorldMap從gGameCore裡讀取WorldMapWidth/Height(考慮建一個靜態的MapInfor)

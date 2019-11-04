@@ -1,0 +1,10 @@
+最早設想，只給個世界名稱當參數，直接從世界資訊裡讀取tiles數，然後再從tiles資料夾裡讀到gTileList
+
+目前：手動由loadWorld給tiles數。
+
+去除將common和過程生成tile的分別讀取。用CountForTile++做計數一起讀取。因此傳入的mounts必須為所有
+的總tile數，loadWorld時須注意。
+
+改換檔案路徑後，雖正確卻讀取不到
+
+.t(非txt檔)似乎無法使用>>讀取資料

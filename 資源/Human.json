@@ -1,0 +1,81 @@
+{
+  "TemplateName": "Human",
+  "Practice": {
+    "PraticeDifficult": 100,
+    "PraticeWay": "XiuXian"
+  },
+  "Body": {
+    "MaxAge": 90,
+    "LifeStageType": 3,
+    "StageAge": [
+      12,
+      30,
+      10
+    ],
+    "StageAttribute": [
+      [
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      [
+        70,
+        70,
+        70,
+        120,
+        70
+      ]
+    ],
+    "EquipField": [
+      1,
+      1,
+      1,
+      2,
+      10,
+      2,
+      0
+    ],
+    "BodyType": 0,
+    "Size": 100,
+    "Weight": 100,
+    "SpeedStage": [
+      [
+        70,
+        0,
+        30
+      ],
+      [
+        100,
+        0,
+        50
+      ],
+      [
+        70,
+        0,
+        30
+      ]
+    ],
+    "Defensive": 0
+  },
+  "Soul": {
+    "Level": 100,
+    "Size": 100,
+    "Tough": 100,
+    "Inward": 100
+  },
+  "Other": {
+    "isSex": 1,
+    "isAquatic": 0
+  },
+  "FeatureAmount": "",
+  "Feature": []
+}

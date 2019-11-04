@@ -1,0 +1,9 @@
+一開始要做的事：
+	呼叫StoreSpace::first_call()，傳入finalID分配值
+	呼叫MyRand::init()，傳入當前seed、初始seed，呼叫次數
+最後要做的事:
+	呼叫MySingleton::cleanAll()，將所有單例實體消滅。只能在最後做。
+
+//0號物品、人物、陣營、稱號為"無"
+0號種族為純種人類
+1-2號card.battle為揮砍、刺(由主手武器提供)

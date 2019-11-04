@@ -1,0 +1,41 @@
+繼承
+class Abook: public book{
+	private: using book::show(); //show()原本是book的public函數
+};
+透過 using 父類::函數() 的用法，可以將函數轉換為另一種形式，但若是轉成與原本形式相同的形式，則報錯。
+/*若是不可見的，如private變數以private方式繼承，則無法using*/
+
+---
+
+Abook繼承於book，若在Abook裡聲明了與book類裡相同名子的變量或函數，則在使用Abook類時只會用到Abook類的
+但這並非代表book類的同名變量消失，而是被遮蓋掉而已，用book::域名可以將其找出來。
+
+---
+
+Abook繼承於book，AAbook繼承於Abook。
+那麼private, public的關係會一層層遞增下去，如public->private->不可見。 這是在都用public的情況下。
+
+---
+
+Abook繼承於book，那麼Abook的構造函數，不管是Abook()或Abook(int w)
+在執行前都會默認先執行book的默認構造函數book()。 
+但若是因為已經定義了其他有參數的構造函數導致book的默認構造函數book()不見，則會報錯。
+建議每個類都要定義一個默認構造函數。
+
+若要指定要執行book的哪個構造函數，可以在Abook的構造函數後面加上，如
+Abook():book(int e){}
+
+若是一層一層繼承，那麼book()先，再Abook()，最後才是AAbook()，按照繼承順序。
+解構函數則是反著繼承順序來。
+
+---
+
+多重繼承
+class Dbook: public Abook, private Bbook{};
+若是有相同名子的變量或函數，則要用域名解決。
+
+若是菱形繼承，如Abook繼承於book，Bbook繼承於book，Dbook繼承於Abook與Bbook。
+那麼Dbook會有兩份book的數據。
+此時要使用virtual。 在上層繼承時就要使用，下層才不會衝突。而且Abook和Bbook都要用
+Abook: virtual public book{}; Bbook: virtual public book{};
+這樣就只會繼承到一份book的數據。
