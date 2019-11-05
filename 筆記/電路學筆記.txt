@@ -1,1 +1,0 @@
-sunusoid到phasor，基本上都先化作cos的形式

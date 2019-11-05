@@ -1,5 +1,0 @@
-transform
-Destroy
-Text
-GameObject
-GetComponent<>()

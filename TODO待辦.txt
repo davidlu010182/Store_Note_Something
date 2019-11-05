@@ -1,2 +1,0 @@
-gConfig·s¼WInterface¡Aload/save, json edit. 
-MainScene load resource, h/cpp
